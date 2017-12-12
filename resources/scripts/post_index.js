@@ -15,20 +15,20 @@ function cargarPost() {
 			postFavoritos = JSON.parse(dbPostFavoritos);
 	
 		}
-		console.log(postFavoritos);
+		//console.log(postFavoritos);
 		//Recorrer el arreglo de los posts
 		$.each(data, function (i, p) {
 
 			var existe = p.id in postFavoritos;
-			console.log(existe);
+			//console.log(existe);
 			var post = "<div class='row'>"
 				+ "<div class='col-md-12'>"
-				+ "<h3>" + p.title + "</h3>"
+				+ "<h3 class='post_id' data-postid='" + p.id + "'>"+ "<a href='file:///C:/Users/darvi/Documents/Proyecto%20Javascript/PostPro/postComentarios.html' target='_blank'>" + p.title + "</a>"+ "</h3>"
 				+ "</div>"
 				+ "</div>"
 				+ "<div class='row'>"
 				+ "<div class='col-md-10'>"
-				+ "<a class='publicador'>"
+				+ "<a class='publicador post_user' href='file:///C:/Users/darvi/Documents/Proyecto%20Javascript/PostPro/perfilUsuario.html' target='_blank' data-postid='" + p.userId + "'>"
 				+ "<span class='glyphicon glyphicon-user'>"
 				+ "Almonte - darvis.almonte@hotmail.com"
 				+ "</span>"
@@ -46,6 +46,16 @@ function cargarPost() {
 				+ "</div>;"
 			$('#post').append(post);
 		});
+
+		$('.post_id').click(function(){
+			var postId =  $(this).data('postid');
+			localStorage.setItem('postId', JSON.stringify(postId));
+		})
+
+		$('.post_user').click(function(){
+			var userId =  $(this).data('postid');
+			localStorage.setItem('postUsuario', JSON.stringify(userId));
+		})
 
 		$('.post_boton').click(function () {
 			var postId =  $(this).data('postid');
@@ -72,6 +82,7 @@ function cargarPost() {
 	});
 
 };
+
 
 function editarPostFavorito(postId) {
 	var localStorage = window.localStorage;
