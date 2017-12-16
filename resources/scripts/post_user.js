@@ -56,7 +56,7 @@ function cargarPerfil(userId) {
 
 function estadisticas(userId){
 
-    var comentarios = 0;
+  
     var posts = 0;
 
     var root = 'https://jsonplaceholder.typicode.com';
@@ -78,26 +78,6 @@ function estadisticas(userId){
 
             $('#stat').append(statPost);
         });
-/*
-        var root = 'https://jsonplaceholder.typicode.com';
-        
-            $.ajax({
-                url: root + '/comments?userId='+ userId,
-                method: 'GET'
-            }).then(function (data) {
-    
-                $.each(data, function (i, p) {
-                    comentarios++;
-    
-                });
-                var statComment = "<div class='row'>"
-                + "<div class='col-md-12'>"
-                + "<h4>" + "Cantidad de Comentarios:" + comentarios + "</h4>"
-                + "</div>"
-                + "</div>"
-    
-                $('#stat').append(statComment);
-            });*/
 
 };
 

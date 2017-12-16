@@ -5,15 +5,48 @@
 
 <head>
 
-    <title>POST INDEX</title>
+    <title>PostMania</title>
     <script src="resources/scripts/jquery-3.2.1.min.js"></script>
     <script src="resources/scripts/post_index.js"></script>
-    <link rel="stylesheet" href="resources/css/bootstrap.min.css" >
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .publicador {
-            color: grey;
+            color: #1abc9c;
             font-size: 15px;
+        }
+
+        img.pequeña {
+            width: 100px;
+            height: 100px;
+        }
+
+        .bg-1 {
+            background-color: #1abc9c;
+            /* Green */
+            color: #ffffff;
+        }
+
+        .bg-2 {
+            background-color: #474e5d;
+            color: #1abc9c;
+        }
+
+        .post-titulo {
+            color: #474e5d;
+        }
+
+        .post-body {
+            color: #474e5d;
+        }
+
+        .container-fluid {
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        .boton-comentario {
+            background-color: #474e5d;
+            color: #f8f8f8;
         }
     </style>
 
@@ -30,15 +63,13 @@
         }     
 
     -->
-    <div class="container">
-
-        <div id="post" class="row">
-            
-            
-
-
-    </div>
-
+    <div class="jumbotron bg-1 ">
+        <h1 class="text-center">PostMania</h1>
+        <p class="text-center">Conoce nuestros posteristas, comenta o conviertete en un "postero" tu tambien!</p>
+        <div class="container-fluid bg-2">
+            <div id="post" class="row">
+            </div>
+        </div>
     </div>
 
 
